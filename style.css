@@ -1,0 +1,133 @@
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 16px;
+  font-weight: bold;
+}
+h2 {
+  width: 100%;
+  font-size: 40px;
+  margin-top: 50px;
+  padding-left: 119px;
+  color: azure;
+  background-color: rgb(2, 135, 2);
+}
+.wrapper {
+  width: 1440px;
+  margin: 0 auto;
+}
+header {
+  height: 128px;
+
+  background-color: rgb(2, 135, 2);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  margin-left: 144px;
+}
+
+.menu-logo {
+  margin-right: 20px;
+}
+
+.hero-img {
+  height: 444px;
+  width: 100%;
+  object-fit: cover;
+}
+.round-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  border: solid rgb(114, 158, 114) 8px;
+  position: absolute;
+  top: 432px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+}
+h1 span {
+  color: rgb(2, 135, 2);
+}
+
+.hero p {
+  display: flex;
+  justify-content: center;
+  color: rgb(96, 94, 94);
+}
+.title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 75px;
+  gap: 20px;
+}
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(89, 143, 89);
+  border-radius: 5px;
+}
+.rating p {
+  display: flex;
+  justify-content: center;
+  padding: 5px;
+  gap: 5px;
+}
+
+.rating span {
+  color: rgb(96, 94, 94);
+  font-weight: 100;
+}
+
+.content-box {
+  height: 141px;
+  width: 720px;
+  margin-top: 20px;
+  margin-left: 119px;
+  background-color: rgb(114, 158, 114);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+.dish-img {
+  height: 121px;
+  width: 207px;
+  align-items: center;
+  object-fit: cover;
+  border-radius: 5px;
+  flex-shrink: 0;
+}
+.name-and-price {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.dish-description {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  margin-left: 20px;
+  position: relative;
+  padding-bottom: 35px;
+}
+.description {
+  font-size: 14px;
+  color: rgb(96, 94, 94);
+}
+.btn-atb {
+  width: 115px;
+  height: 29px;
+  align-items: flex-end;
+  border-radius: 20px;
+  border: none;
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
+}
