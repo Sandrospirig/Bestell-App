@@ -9,8 +9,12 @@ h2 {
   font-size: 40px;
   margin-top: 50px;
   padding-left: 119px;
-  color: azure;
-  background-color: rgb(2, 135, 2);
+  color: #f3f0ea;
+  background-color: #235028;
+}
+h3 {
+  font-size: 28px;
+  font-weight: 700;
 }
 .wrapper {
   width: 1440px;
@@ -19,7 +23,7 @@ h2 {
 header {
   height: 128px;
 
-  background-color: rgb(2, 135, 2);
+  background-color: #235028;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -42,21 +46,22 @@ header {
   height: 200px;
   width: 200px;
   border-radius: 50%;
-  border: solid rgb(114, 158, 114) 8px;
+  border: solid #729e72 8px;
   position: absolute;
   top: 432px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
+  box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
 h1 span {
-  color: rgb(2, 135, 2);
+  color: #235028;
 }
 
 .hero p {
   display: flex;
   justify-content: center;
-  color: rgb(96, 94, 94);
+  color: #605e5e;
 }
 .title {
   display: flex;
@@ -69,7 +74,7 @@ h1 span {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(89, 143, 89);
+  background-color: #729e72;
   border-radius: 5px;
 }
 .rating p {
@@ -77,19 +82,27 @@ h1 span {
   justify-content: center;
   padding: 5px;
   gap: 5px;
+  color: #363534;
 }
 
 .rating span {
-  color: rgb(96, 94, 94);
+  color: #605e5e;
   font-weight: 100;
 }
+.main-content {
+  display: flex;
+  margin-top: 100px;
+}
 
+#dish-wrapper {
+  width: 1005px;
+}
 .content-box {
   height: 141px;
   width: 720px;
   margin-top: 20px;
   margin-left: 119px;
-  background-color: rgb(114, 158, 114);
+  background-color: #729e72;
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -108,6 +121,10 @@ h1 span {
   justify-content: space-between;
   width: 100%;
 }
+.name {
+  color: #363534;
+  font-weight: 900;
+}
 .dish-description {
   display: flex;
   flex-direction: column;
@@ -118,9 +135,9 @@ h1 span {
 }
 .description {
   font-size: 14px;
-  color: rgb(96, 94, 94);
+  color: #363534;
 }
-.btn-atb {
+#btn-atb {
   width: 115px;
   height: 29px;
   align-items: flex-end;
@@ -130,4 +147,96 @@ h1 span {
   cursor: pointer;
   bottom: 0;
   right: 0;
+}
+
+#basket-wrapper {
+  width: 435px;
+  flex-grow: 1;
+}
+
+.content-basket {
+  width: 435px;
+  height: 794px;
+  position: sticky;
+  margin-top: 50px;
+  top: 0px;
+  background-color: #f3f0ea;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 15px 0 0 15px;
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.content-basket h3,
+.content-basket p,
+.content-basket img {
+  margin-top: 50px;
+  color: #235028;
+}
+.content-basket img {
+  width: 200px;
+}
+
+.content-basket p {
+  width: 300px;
+  text-align: center;
+}
+
+#basket-name {
+  text-align: start;
+  color: #363534;
+  font-weight: 900;
+  margin: 0px 10px;
+}
+.basket-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 14px;
+  color: #363534;
+  height: 100px;
+  width: 400px;
+  background-color: #729e72;
+  border-radius: 5px;
+  margin-top: 10px;
+}
+.basket-toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 20px;
+  margin: 0px 10px;
+}
+
+.basket-btns {
+  display: flex;
+}
+.basket-price {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+.calculate {
+  width: 400px;
+}
+.subtotal {
+  display: flex;
+}
+.delivery-fee {
+  display: flex;
+}
+.total {
+  display: flex;
+}
+
+footer {
+  width: 100%;
+  height: 128px;
+  margin-top: 50px;
+  background-color: #235028;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 50px;
+  color: #f3f0ea;
 }

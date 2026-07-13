@@ -79,4 +79,12 @@ let myDishes = [
   },
 ];
 
-let basket = [];
+let basket = [
+  {
+    title: "Your Basket",
+    empty:
+      "Nothing here yet.</br> Go ahead and choose something</br> delicious!",
+    img: "./assets/icons/basket-img.png",
+    items: [],
+  },
+];
