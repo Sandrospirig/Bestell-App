@@ -33,10 +33,12 @@ function renderBasket() {
 
 function getFullBasketData(basketData) {
   let htmlRef = `<div class="content-basket">
-  <h3>${basketData.title}</h3>`;
+  <h3>${basketData.title}</h3><div class="added-to-basket">`;
+
   for (let i = 0; i < basketData.items.length; i++) {
     htmlRef += getBasketTemplate(basketData.items[i], i);
   }
+  htmlRef += `</div>`;
   htmlRef += getFullPriceTemplate(
     calculateSubTotal(basketData.items),
     deliveryFee,
@@ -45,10 +47,17 @@ function getFullBasketData(basketData) {
   return htmlRef + `</div>`;
 }
 
+function addToBasket(catIndex, dishIndex) {
+  let selectedDish = myDishes[catIndex].dishes[dishIndex];
+  let dishWitcount = { ...selectedDish, count: 1 };
+  basket[0].items.push(dishWitcount);
+  renderBasket();
+}
+
 function calculateSubTotal(items) {
   let subSum = 0;
   for (let i = 0; i < items.length; i++) {
-    subSum += items[i].price;
+    subSum += items[i].price * items[i].count;
   }
   return subSum;
 }
@@ -58,12 +67,6 @@ function calculateTotal(calculateSubTotal, deliveryFee) {
   return totalSum;
 }
 
-function addToBasket(catIndex, dishIndex) {
-  let selectedDish = myDishes[catIndex].dishes[dishIndex];
-  let dishWitcount = { ...selectedDish, count: 1 };
-  basket[0].items.push(dishWitcount);
-  renderBasket();
-}
 function removeItem(i) {
   let item = basket[0].items[i];
   if (item.count > 1) {
@@ -73,41 +76,9 @@ function removeItem(i) {
   }
   renderBasket();
 }
-/*
-// Comment hinzufügen
-function addComment(index) {
-  let nameInputRef = document.getElementById(`name-input-${index}`);
-  let commentInputRef = document.getElementById(`comment-input-${index}`);
-  if (nameInputRef.value !== "" && commentInputRef.value !== "") {
-    books[index].comments.push({
-      name: nameInputRef.value,
-      comment: commentInputRef.value,
-    });
-  }
-  saveToLocalStorage();
-  renderBooks();
-  nameInputRef.value = "";
-  commentInputRef.value = "";
-}
 
-//-> comments archivieren
-function saveToLocalStorage(index) {
-  localStorage.setItem("allDataComments", JSON.stringify(books));
+function addCount(i) {
+  let itemCount = basket[0].items[i];
+  itemCount.count++;
+  renderBasket();
 }
-
-function getFromLocalStorageComments() {
-  let myArr1 = JSON.parse(localStorage.getItem("allDataComments"));
-
-  if (myArr1 !== null) {
-    return (books = myArr1);
-  }
-}
-
-function addLike(index) {
-  let counterRef = document.getElementById(`like-${index}`);
-  if (counterRef) {
-    let currentLikes = parseInt(counterRef.innerText) || 0;
-    counterRef.innerText = currentLikes + 1;
-  }
-}
-*/

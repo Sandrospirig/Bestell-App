@@ -17,7 +17,8 @@ h3 {
   font-weight: 700;
 }
 .wrapper {
-  width: 1440px;
+  width: 100%;
+  max-width: 1440px;
   margin: 0 auto;
 }
 header {
@@ -148,6 +149,9 @@ h1 span {
   bottom: 0;
   right: 0;
 }
+#btn-atb:hover {
+  color: #f8ae23;
+}
 
 #basket-wrapper {
   width: 435px;
@@ -179,8 +183,11 @@ h1 span {
 }
 
 .content-basket p {
-  width: 300px;
-  text-align: center;
+  width: 345px;
+}
+.added-to-basket {
+  height: 370px;
+  overflow-y: auto;
 }
 
 #basket-name {
@@ -208,8 +215,31 @@ h1 span {
   margin: 0px 10px;
 }
 
+#delete-btn {
+  border: none;
+  cursor: pointer;
+  background-color: #729e72;
+}
+
+#delete-btn-img {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+#plus-btn {
+  border: none;
+  cursor: pointer;
+  background-color: #729e72;
+}
+#plus {
+  width: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
 .basket-btns {
   display: flex;
+  gap: 5px;
 }
 .basket-price {
   font-size: 18px;
@@ -217,6 +247,10 @@ h1 span {
 }
 
 .calculate {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: space-around;
   width: 400px;
 }
 .subtotal {
@@ -227,6 +261,18 @@ h1 span {
 }
 .total {
   display: flex;
+}
+.buy-now {
+  width: 320px;
+  height: 64px;
+  margin-top: 25px;
+  margin-left: 40px;
+  border-radius: 60px;
+  border: none;
+  cursor: pointer;
+  background-color: #235028;
+  color: white;
+  font-size: 32px;
 }
 
 footer {
@@ -239,4 +285,49 @@ footer {
   justify-content: center;
   gap: 50px;
   color: #f3f0ea;
+}
+
+@media (max-width: 1300px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+    gap: 40px;
+  }
+
+  #dish-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    padding-left: 0;
+  }
+
+  .content-box {
+    margin-left: 0;
+    width: 90%;
+    max-width: 720px;
+  }
+
+  #basket-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-basket {
+    width: 90%;
+    max-width: 435px;
+  }
 }

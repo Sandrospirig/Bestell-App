@@ -27,17 +27,19 @@ function getEmptyBasketTemplate(basketData) {
 }
 
 function getBasketTemplate(item, i) {
+  let itemTotalPrice = item.price * item.count;
   return `<div class="basket-description">
          <p id= "basket-name" >${item.name}</p>
           <div class="basket-toolbar">
-        <div class="basket-btns"><Button onclick="removeItem(${i})">x</Button><span>${item.count}</span><Button>+</Button></div>
+        <div class="basket-btns"><button id="delete-btn" onclick="removeItem(${i})"><img src="./assets/icons/delete-btn.png" alt="delete-btn" id="delete-btn-img"></button><span>${item.count}</span><button id="plus-btn" onclick="addCount(${i})"><p id="plus">+</p></button></div>
         <span class= "basket-price" >${item.price.toFixed(2)}$</span></div>
         </div>`;
 }
 
 function getFullPriceTemplate(subSum, deliveryFee, totalSum) {
   return `<div class="calculate">
-      <div class="subtotal"><p>Subtotal</p><p >${subSum.toFixed(2)}$</p></div>
+      <div class="subtotal"><p>Subtotal</p><p>${subSum.toFixed(2)}$</p></div>
       <div class="delivery-fee"><p>Delivery-fee</p><p>${deliveryFee.toFixed(2)}$</p></div>
-      <div class="total"><p>Total</p><p >${totalSum.toFixed(2)}$</p></div></div>`;
+      <div class="total"><p>Total</p><p >${totalSum.toFixed(2)}$</p></div>
+      <button class="buy-now">Buy now  ${totalSum.toFixed(2)}$</button></div>`;
 }
