@@ -41,5 +41,5 @@ function getFullPriceTemplate(subSum, deliveryFee, totalSum) {
       <div class="subtotal"><p>Subtotal</p><p>${subSum.toFixed(2)}$</p></div>
       <div class="delivery-fee"><p>Delivery-fee</p><p>${deliveryFee.toFixed(2)}$</p></div>
       <div class="total"><p>Total</p><p >${totalSum.toFixed(2)}$</p></div>
-      <button class="buy-now">Buy now  ${totalSum.toFixed(2)}$</button></div>`;
+      <button class="buy-now" onclick="openModal()">Buy now  ${totalSum.toFixed(2)}$</button></div>`;
 }

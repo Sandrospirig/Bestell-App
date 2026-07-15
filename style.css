@@ -108,6 +108,7 @@ h1 span {
   display: flex;
   align-items: center;
   padding: 10px;
+  gap: 10px;
 }
 .dish-img {
   height: 121px;
@@ -275,59 +276,61 @@ h1 span {
   font-size: 32px;
 }
 
+.hidden {
+  display: none;
+}
+.modal {
+  position: absolute;
+  width: 300px;
+  height: 150px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #f3f0ea;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.modal h3,
+.modal p {
+  text-align: center;
+}
+.close-modal {
+  position: absolute;
+  top: 18px;
+  right: 32px;
+  font-size: 30px;
+  color: #235028;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.bus-img {
+  width: 80px;
+  margin: 10px 0 0 110px;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(3px);
+  min-height: 100vh;
+  z-index: 5;
+}
+
 footer {
   width: 100%;
   height: 128px;
   margin-top: 50px;
   background-color: #235028;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
   gap: 50px;
   color: #f3f0ea;
-}
-
-@media (max-width: 1300px) {
-  header {
-    padding: 0 20px;
-  }
-
-  .logo {
-    margin-left: 0;
-  }
-
-  .main-content {
-    flex-direction: column;
-    align-items: center;
-    margin-top: 50px;
-    gap: 40px;
-  }
-
-  #dish-wrapper {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  h2 {
-    padding-left: 0;
-  }
-
-  .content-box {
-    margin-left: 0;
-    width: 90%;
-    max-width: 720px;
-  }
-
-  #basket-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-  }
-
-  .content-basket {
-    width: 90%;
-    max-width: 435px;
-  }
 }

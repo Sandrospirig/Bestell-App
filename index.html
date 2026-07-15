@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/standard.css" />
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="./style/responsive.css" />
+    <script src="script.js" defer></script>
     <script src="./scripts/templates.js"></script>
     <script src="./scripts/json.js"></script>
     <title>Bestell-App</title>
@@ -38,8 +39,20 @@
         </section>
         <section class="main-content">
           <section id="dish-wrapper"></section>
+          <div id="basket-overlay" onclick="hideBasket()"></div>
           <section id="basket-wrapper"></section>
         </section>
+        <div class="overlay hidden">
+          <div class="modal hidden">
+            <button class="close-modal">&times;</button>
+            <img class="bus-img" src="./assets/img/Bus-img.png" alt="bus-img" />
+            <h3>Order confirmed!</h3>
+            <p>Your food is on the way!</p>
+          </div>
+        </div>
+        <button class="hidden big-basket-btn" onclick="showBasket()">
+          Basket
+        </button>
       </main>
       <footer>
         <p>© 2026 ThaiKitchen</p>

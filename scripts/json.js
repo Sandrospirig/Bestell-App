@@ -7,21 +7,21 @@ let myDishes = [
         name: "Authentic Satay",
         price: 7.9,
         description:
-          "Marinated skewers of chicken or beef in coconut milk and spices, grilled over an open flame and served with a rich, savory peanut dipping sauce.",
+          "Marinated skewers of chicken or beef in coconut milk and spices, served with a savory peanut dipping sauce.",
       },
       {
         img: "./assets/img/todmunpla.jpg",
-        name: "Tod Mun Pla (Thai Fish Cakes)",
+        name: "Tod Mun Pla",
         price: 5.9,
         description:
           "Savory patties made from minced white fish or shrimp, mixed with red curry paste and fragrant kaffir lime leaves.",
       },
       {
         img: "./assets/img/popiatod.jpg",
-        name: "Po Pia Tod (Crunchy Spring Rolls)",
+        name: "Po Pia Tod",
         price: 8.9,
         description:
-          " Crispy fried rolls stuffed with glass noodles, shredded vegetables, and minced meat, served with a sweet chili sauce.",
+          " Crispy fried rolls stuffed with glass noodles, shredded vegetables, and minced meat, with a sweet chili sauce.",
       },
     ],
   },
@@ -37,17 +37,17 @@ let myDishes = [
       },
       {
         img: "./assets/img/padkrapao.jpg",
-        name: "Pad Kra Pao (Holy Basil Stir-Fry)",
+        name: "Pad Kra Pao",
         price: 10.9,
         description:
-          " A spicy Thai staple featuring minced chicken or beef, stir-fried with garlic, chilies, and holy basil, served with a crispy fried egg on top.",
+          "Minced beef, stir-fried with garlic, chilies, and holy basil, served with a crispy fried egg on top.",
       },
       {
         img: "./assets/img/tomyumgoong.jpg",
         name: "Tom Yum Goong",
         price: 12.9,
         description:
-          "A classic, hot and sour soup featuring succulent shrimp, earthy mushrooms, and a vibrant broth infused with lemongrass, galangal, and kaffir lime leaves.",
+          "Hot and sour soup with shrimp, mushrooms, and a broth with lemongrass, galangal.",
       },
     ],
   },
@@ -56,17 +56,17 @@ let myDishes = [
     dishes: [
       {
         img: "./assets/img/khaoniaomamuang.jpg",
-        name: "Khao Niao Mamuang (Mango Sticky Rice)",
+        name: "Khao Niao Mamuang",
         price: 5.9,
         description:
           "Sweet, ripe yellow mango served alongside warm, salty-sweet coconut sticky rice.",
       },
       {
         img: "./assets/img/kanomtuay.jpg",
-        name: "Kanom Tuay (Steamed Coconut Pudding)",
+        name: "Kanom Tuay",
         price: 5.9,
         description:
-          "A two-layered steamed dessert where the bottom is a sweet base, topped with a rich, creamy, and slightly salty coconut pudding.",
+          "A steamed dessert where the bottom is a sweet base, topped with a rich and slightly salty coconut pudding.",
       },
       {
         img: "./assets/img/bualoy.jpg",

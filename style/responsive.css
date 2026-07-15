@@ -1,0 +1,198 @@
+@media (max-width: 1300px) {
+  header {
+    padding: 0 20px;
+  }
+
+  .logo {
+    margin-left: 0;
+  }
+
+  h2 {
+    padding-left: 0;
+  }
+
+  .content-box {
+    margin-left: 0;
+  }
+
+  #basket-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .content-basket {
+    width: 100%;
+    max-width: 435px;
+  }
+}
+@media (max-width: 1200px) {
+  .logo {
+    margin-left: 0;
+  }
+
+  #dish-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  h2 {
+    padding-left: 0;
+  }
+
+  .content-box {
+    margin-left: 0;
+  }
+  #basket-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    z-index: 4;
+  }
+
+  #basket-wrapper {
+    position: fixed;
+    display: none;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    z-index: 5;
+    pointer-events: none;
+  }
+  #basket-wrapper.is-visible,
+  #basket-overlay.is-visible {
+    display: flex;
+  }
+
+  .content-basket {
+    top: 50px;
+    width: 100%;
+    max-width: 435px;
+    pointer-events: auto;
+    border-radius: 15px;
+  }
+  .big-basket-btn {
+    display: inline;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #f3f0ea;
+    color: #235028;
+    font-size: 42px;
+    border: none;
+    cursor: pointer;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media (max-width: 760px) {
+  .content-box {
+    max-width: 720px;
+    width: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .content-box {
+    display: flex;
+    flex-direction: column;
+    height: 280px;
+    gap: 20px;
+  }
+
+  .dish-img {
+    height: 121px;
+    width: 100%;
+    align-items: center;
+    object-fit: cover;
+    border-radius: 5px;
+    flex-shrink: 0;
+  }
+}
+
+.dish-description {
+  margin: 0;
+}
+.price {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+footer {
+  gap: 20px;
+}
+
+@media (max-width: 760px) {
+  .content-box {
+    max-width: 720px;
+    width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 10px;
+  }
+  .content-basket {
+    max-width: 300px;
+  }
+  .added-to-basket {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    justify-content: center;
+  }
+  .basket-description {
+    width: 90%;
+    max-width: 300px;
+  }
+  .calculate {
+    width: 90%;
+    max-width: 300px;
+  }
+  #basket-name {
+    width: 90%;
+    max-width: 300px;
+  }
+  .content-basket p {
+    width: auto;
+  }
+  .subtotal {
+    width: 90%;
+    justify-content: space-between;
+  }
+  .delivery-fee {
+    width: 90%;
+    justify-content: space-between;
+  }
+  .total {
+    width: 90%;
+    justify-content: space-between;
+  }
+  .buy-now {
+    margin-left: 0;
+    width: 100%;
+    max-width: 320px;
+  }
+  footer {
+    flex-direction: column;
+    gap: 5px;
+    justify-content: start;
+  }
+}

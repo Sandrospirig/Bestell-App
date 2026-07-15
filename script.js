@@ -3,9 +3,16 @@
 function init() {
   renderDishes();
   renderBasket();
+
+  btnCloseModal.addEventListener("click", closeModal);
+  overlay.addEventListener("click", closeModal);
 }
 
 let deliveryFee = 15;
+const modal = document.querySelector(".modal");
+const overlay = document.querySelector(".overlay");
+const btnCloseModal = document.querySelector(".close-modal");
+const closeBasketWrapper = document.querySelector("#basket-wrapper");
 
 function renderDishes() {
   let contentRef = document.getElementById("dish-wrapper");
@@ -32,15 +39,14 @@ function renderBasket() {
 }
 
 function getFullBasketData(basketData) {
-  let htmlRef = `<div class="content-basket">
-  <h3>${basketData.title}</h3><div class="added-to-basket">`;
-
+  let htmlRef = `<div class="content-basket"><h3>${basketData.title}</h3><div class="added-to-basket">`;
   for (let i = 0; i < basketData.items.length; i++) {
     htmlRef += getBasketTemplate(basketData.items[i], i);
   }
+  let sub = calculateSubTotal(basketData.items);
   htmlRef += `</div>`;
   htmlRef += getFullPriceTemplate(
-    calculateSubTotal(basketData.items),
+    sub,
     deliveryFee,
     calculateTotal(calculateSubTotal(basketData.items), deliveryFee),
   );
@@ -50,7 +56,15 @@ function getFullBasketData(basketData) {
 function addToBasket(catIndex, dishIndex) {
   let selectedDish = myDishes[catIndex].dishes[dishIndex];
   let dishWitcount = { ...selectedDish, count: 1 };
-  basket[0].items.push(dishWitcount);
+  let items = basket[0].items;
+  let existingItem = items.find((item) => item.name === selectedDish.name);
+
+  if (existingItem) {
+    existingItem.count++;
+  } else {
+    basket[0].items.push(dishWitcount);
+  }
+
   renderBasket();
 }
 
@@ -81,4 +95,28 @@ function addCount(i) {
   let itemCount = basket[0].items[i];
   itemCount.count++;
   renderBasket();
+}
+function emptyBasket() {
+  basket[0].items = [];
+  renderBasket();
+}
+
+function openModal() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  emptyBasket();
+}
+
+function closeModal() {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+function showBasket() {
+  document.getElementById("basket-wrapper").classList.add("is-visible");
+  document.getElementById("basket-overlay").classList.add("is-visible");
+}
+
+function hideBasket() {
+  document.getElementById("basket-wrapper").classList.remove("is-visible");
+  document.getElementById("basket-overlay").classList.remove("is-visible");
 }
