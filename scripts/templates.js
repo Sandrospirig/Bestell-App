@@ -27,13 +27,27 @@ function getEmptyBasketTemplate(basketData) {
 }
 
 function getBasketTemplate(item, i) {
-  let itemTotalPrice = item.price * item.count;
+  let isMultiple = item.count > 1;
+  let itemTotalPrice = (item.price * item.count).toFixed(2);
   return `<div class="basket-description">
-         <p id= "basket-name" >${item.name}</p>
-          <div class="basket-toolbar">
-        <div class="basket-btns"><button id="delete-btn" onclick="removeItem(${i})"><img src="./assets/icons/delete-btn.png" alt="delete-btn" id="delete-btn-img"></button><span>${item.count}</span><button id="plus-btn" onclick="addCount(${i})"><p id="plus">+</p></button></div>
-        <span class= "basket-price" >${item.price.toFixed(2)}$</span></div>
+         <div class="name-and-price">
+         <span id="basket-name">${item.count}x ${item.name}</span>
+         ${isMultiple ? `<button id="delete-btn" onclick="clearItem(${i})"><img id="delete-btn-img" class="delete-right" src="./assets/icons/delete-btn.png"></button>` : `<span class="basket-price">${itemTotalPrice} €</span>`}
+         </div>
+         ${getBasketToolbarTemplate(item, i, isMultiple, itemTotalPrice)}
         </div>`;
+}
+
+function getBasketToolbarTemplate(item, i, isMultiple, itemTotalPrice) {
+  return `<div class="basket-toolbar">
+         <div class="basket-btns">
+         ${isMultiple ? `<button id="minus-btn" onclick="removeItem(${i})">-</button>` : `<button id="delete-btn" onclick="removeItem(${i})"><img id="delete-btn-img" src="./assets/icons/delete-btn.png"></button>`}
+         <span>${item.count}</span>
+         <button id="plus-btn" onclick="addCount(${i})">+</button>
+         </div>
+         ${isMultiple ? `<span class="basket-price">${itemTotalPrice} €</span>` : ""}
+    </div>
+  `;
 }
 
 function getFullPriceTemplate(subSum, deliveryFee, totalSum) {
@@ -41,5 +55,5 @@ function getFullPriceTemplate(subSum, deliveryFee, totalSum) {
       <div class="subtotal"><p>Subtotal</p><p>${subSum.toFixed(2)}$</p></div>
       <div class="delivery-fee"><p>Delivery-fee</p><p>${deliveryFee.toFixed(2)}$</p></div>
       <div class="total"><p>Total</p><p >${totalSum.toFixed(2)}$</p></div>
-      <button class="buy-now" onclick="openModal()">Buy now  ${totalSum.toFixed(2)}$</button></div>`;
+      <button class="buy-now" onclick="toggleModal('modal',true)">Buy now  ${totalSum.toFixed(2)}$</button></div>`;
 }

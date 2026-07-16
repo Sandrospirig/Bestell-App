@@ -3,9 +3,8 @@
 function init() {
   renderDishes();
   renderBasket();
-
-  btnCloseModal.addEventListener("click", closeModal);
-  overlay.addEventListener("click", closeModal);
+  btnCloseModal.addEventListener("click", () => toggleModal("modal", false));
+  overlay.addEventListener("click", () => toggleModal("modal", false));
 }
 
 let deliveryFee = 15;
@@ -64,7 +63,6 @@ function addToBasket(catIndex, dishIndex) {
   } else {
     basket[0].items.push(dishWitcount);
   }
-
   renderBasket();
 }
 
@@ -96,27 +94,28 @@ function addCount(i) {
   itemCount.count++;
   renderBasket();
 }
+
 function emptyBasket() {
   basket[0].items = [];
   renderBasket();
 }
 
-function openModal() {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  emptyBasket();
+/* prettier-ignore */
+function toggleModal(idOfElement, show) {
+  if (idOfElement === "basket-wrapper") {
+    let element = document.getElementById(idOfElement);
+    if (element) {
+      element.classList.toggle("is-visible", show);
+      document.getElementById("basket-overlay").classList.toggle("is-visible", show);
+    }
+  } else if (idOfElement === "modal") {
+    modal.classList.toggle("hidden", !show);
+    overlay.classList.toggle("hidden", !show);
+    if (show) emptyBasket();
+  }
 }
 
-function closeModal() {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-}
-function showBasket() {
-  document.getElementById("basket-wrapper").classList.add("is-visible");
-  document.getElementById("basket-overlay").classList.add("is-visible");
-}
-
-function hideBasket() {
-  document.getElementById("basket-wrapper").classList.remove("is-visible");
-  document.getElementById("basket-overlay").classList.remove("is-visible");
+function clearItem(i) {
+  basket[0].items.splice(i, 1);
+  renderBasket();
 }

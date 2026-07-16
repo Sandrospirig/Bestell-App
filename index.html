@@ -13,11 +13,11 @@
     <link rel="icon" type="image/x-icon" href="./assets/icons/Logo 02.png" />
   </head>
   <body onload="init()">
+    <header>
+      <img class="logo" src="./assets/icons/Logo 01.png" alt="bestell-logo" />
+      <img class="menu-logo" src="./assets/icons/menu.png" alt="menu-icon" />
+    </header>
     <section class="wrapper">
-      <header>
-        <img class="logo" src="./assets/icons/Logo 01.png" alt="bestell-logo" />
-        <img class="menu-logo" src="./assets/icons/menu.png" alt="menu-icon" />
-      </header>
       <main>
         <section class="hero">
           <img class="hero-img" src="./assets/img/hero.jpg" alt="hero-img" />
@@ -39,7 +39,10 @@
         </section>
         <section class="main-content">
           <section id="dish-wrapper"></section>
-          <div id="basket-overlay" onclick="hideBasket()"></div>
+          <div
+            id="basket-overlay"
+            onclick="toggleModal('basket-wrapper', false)"
+          ></div>
           <section id="basket-wrapper"></section>
         </section>
         <div class="overlay hidden">
@@ -49,16 +52,19 @@
             <h3>Order confirmed!</h3>
             <p>Your food is on the way!</p>
           </div>
-        </div>
-        <button class="hidden big-basket-btn" onclick="showBasket()">
+
+      </main>
+    </section>
+    <footer>
+      <p>© 2026 ThaiKitchen</p>
+      <p>Imprint</p>
+      <p>Cookie Preferences</p>
+    </footer>
+            <button
+          class="hidden big-basket-btn"
+          onclick="toggleModal('basket-wrapper', true)"
+        >
           Basket
         </button>
-      </main>
-      <footer>
-        <p>© 2026 ThaiKitchen</p>
-        <p>Imprint</p>
-        <p>Cookie Preferences</p>
-      </footer>
-    </section>
   </body>
 </html>

@@ -4,23 +4,39 @@ body {
   font-size: 16px;
   font-weight: bold;
 }
+
 h2 {
-  width: 100%;
   font-size: 40px;
-  margin-top: 50px;
-  padding-left: 119px;
+  margin-top: 10px;
   color: #f3f0ea;
   background-color: #235028;
+  box-sizing: border-box;
+  position: absolute;
+  width: 100vw;
+  max-width: 1920px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 65px;
+  display: flex;
+  align-items: center;
+  padding-left: calc((100vw - 1440px) / 2 + 119px);
 }
+h2 + .content-box {
+  margin-top: 90px;
+}
+
 h3 {
   font-size: 28px;
   font-weight: 700;
 }
+
 .wrapper {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
+  position: relative;
 }
+
 header {
   height: 128px;
 
@@ -43,27 +59,29 @@ header {
   width: 100%;
   object-fit: cover;
 }
+
 .round-img {
   height: 200px;
   width: 200px;
   border-radius: 50%;
   border: solid #729e72 8px;
   position: absolute;
-  top: 432px;
+  top: 310px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 1;
   box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.1);
 }
+
 h1 span {
   color: #235028;
 }
 
 .hero p {
-  display: flex;
-  justify-content: center;
   color: #605e5e;
+  text-align: center;
 }
+
 .title {
   display: flex;
   justify-content: center;
@@ -71,6 +89,7 @@ h1 span {
   margin-top: 75px;
   gap: 20px;
 }
+
 .rating {
   display: flex;
   align-items: center;
@@ -78,6 +97,7 @@ h1 span {
   background-color: #729e72;
   border-radius: 5px;
 }
+
 .rating p {
   display: flex;
   justify-content: center;
@@ -90,6 +110,7 @@ h1 span {
   color: #605e5e;
   font-weight: 100;
 }
+
 .main-content {
   display: flex;
   margin-top: 100px;
@@ -98,6 +119,7 @@ h1 span {
 #dish-wrapper {
   width: 1005px;
 }
+
 .content-box {
   height: 141px;
   width: 720px;
@@ -110,6 +132,7 @@ h1 span {
   padding: 10px;
   gap: 10px;
 }
+
 .dish-img {
   height: 121px;
   width: 207px;
@@ -118,15 +141,18 @@ h1 span {
   border-radius: 5px;
   flex-shrink: 0;
 }
+
 .name-and-price {
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
+
 .name {
   color: #363534;
   font-weight: 900;
 }
+
 .dish-description {
   display: flex;
   flex-direction: column;
@@ -135,10 +161,12 @@ h1 span {
   position: relative;
   padding-bottom: 35px;
 }
+
 .description {
   font-size: 14px;
   color: #363534;
 }
+
 #btn-atb {
   width: 115px;
   height: 29px;
@@ -150,6 +178,7 @@ h1 span {
   bottom: 0;
   right: 0;
 }
+
 #btn-atb:hover {
   color: #f8ae23;
 }
@@ -163,7 +192,7 @@ h1 span {
   width: 435px;
   height: 794px;
   position: sticky;
-  margin-top: 50px;
+  margin-top: 10px;
   top: 0px;
   background-color: #f3f0ea;
   display: flex;
@@ -179,15 +208,17 @@ h1 span {
   margin-top: 50px;
   color: #235028;
 }
+
 .content-basket img {
   width: 200px;
 }
 
 .content-basket p {
-  width: 345px;
+  width: auto;
 }
+
 .added-to-basket {
-  height: 370px;
+  height: 340px;
   overflow-y: auto;
 }
 
@@ -197,6 +228,7 @@ h1 span {
   font-weight: 900;
   margin: 0px 10px;
 }
+
 .basket-description {
   display: flex;
   flex-direction: column;
@@ -209,6 +241,7 @@ h1 span {
   border-radius: 5px;
   margin-top: 10px;
 }
+
 .basket-toolbar {
   display: flex;
   justify-content: space-between;
@@ -222,16 +255,34 @@ h1 span {
   background-color: #729e72;
 }
 
+.delete-right {
+  margin-right: 20px;
+}
+
 #delete-btn-img {
+  margin-top: 0px;
   height: 20px;
   width: 20px;
-  margin: 0;
 }
+
 #plus-btn {
   border: none;
   cursor: pointer;
   background-color: #729e72;
+  width: 20px;
+  font-weight: 700;
+  margin: 0;
 }
+
+#minus-btn {
+  border: none;
+  cursor: pointer;
+  background-color: #729e72;
+  width: 20px;
+  font-weight: 700;
+  margin: 0;
+}
+
 #plus {
   width: 20px;
   font-weight: 700;
@@ -242,9 +293,11 @@ h1 span {
   display: flex;
   gap: 5px;
 }
+
 .basket-price {
   font-size: 18px;
   font-weight: 800;
+  margin: 0 10px;
 }
 
 .calculate {
@@ -254,20 +307,26 @@ h1 span {
   align-content: space-around;
   width: 400px;
 }
+
 .subtotal {
   display: flex;
+  justify-content: space-between;
 }
+
 .delivery-fee {
   display: flex;
+  justify-content: space-between;
 }
+
 .total {
   display: flex;
+  justify-content: space-between;
 }
+
 .buy-now {
-  width: 320px;
+  width: 400px;
   height: 64px;
   margin-top: 25px;
-  margin-left: 40px;
   border-radius: 60px;
   border: none;
   cursor: pointer;
@@ -279,6 +338,7 @@ h1 span {
 .hidden {
   display: none;
 }
+
 .modal {
   position: absolute;
   width: 300px;
@@ -295,6 +355,7 @@ h1 span {
 .modal p {
   text-align: center;
 }
+
 .close-modal {
   position: absolute;
   top: 18px;
@@ -305,10 +366,12 @@ h1 span {
   border: none;
   background: none;
 }
+
 .bus-img {
   width: 80px;
   margin: 10px 0 0 110px;
 }
+
 .overlay {
   position: fixed;
   top: 0;

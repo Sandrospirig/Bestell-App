@@ -1,3 +1,5 @@
+"use strict";
+
 let myDishes = [
   {
     category: "Starters",
@@ -14,14 +16,14 @@ let myDishes = [
         name: "Tod Mun Pla",
         price: 5.9,
         description:
-          "Savory patties made from minced white fish or shrimp, mixed with red curry paste and fragrant kaffir lime leaves.",
+          "Savory patties made from minced white fish or shrimp, mixed with red curry paste and fragrant kaffir leaves.",
       },
       {
         img: "./assets/img/popiatod.jpg",
         name: "Po Pia Tod",
         price: 8.9,
         description:
-          " Crispy fried rolls stuffed with glass noodles, shredded vegetables, and minced meat, with a sweet chili sauce.",
+          " Crispy fried rolls stuffed with glass noodles, vegetables, and minced meat, with a sweet chili sauce.",
       },
     ],
   },
@@ -33,7 +35,7 @@ let myDishes = [
         name: "Pad Thai",
         price: 9.9,
         description:
-          "Stir-fried rice noodles mixed with tamarind, fish sauce, peanuts, and your choice of chicken, shrimp, or tofu.",
+          "Stir-fried rice noodles with tamarind, fish sauce, peanuts- with chicken, shrimp, or tofu.",
       },
       {
         img: "./assets/img/padkrapao.jpg",
