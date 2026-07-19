@@ -2,7 +2,6 @@ body {
   font-family: sans-serif;
   line-height: 1.4;
   font-size: 16px;
-  font-weight: bold;
 }
 
 h2 {
@@ -13,7 +12,6 @@ h2 {
   box-sizing: border-box;
   position: absolute;
   width: 100vw;
-  max-width: 1920px;
   left: 50%;
   transform: translateX(-50%);
   height: 65px;
@@ -21,6 +19,7 @@ h2 {
   align-items: center;
   padding-left: calc((100vw - 1440px) / 2 + 119px);
 }
+
 h2 + .content-box {
   margin-top: 90px;
 }
@@ -142,32 +141,34 @@ h1 span {
   flex-shrink: 0;
 }
 
-.name-and-price {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-}
-
-.name {
-  color: #363534;
-  font-weight: 900;
-}
-
 .dish-description {
   display: flex;
   flex-direction: column;
   flex-grow: 1;
+  max-width: 440px;
   margin-left: 20px;
   position: relative;
   padding-bottom: 35px;
 }
 
+.name-and-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 32px;
+}
+
+.name {
+  color: #363534;
+  font-weight: 900;
+  font-size: 18px;
+}
+
 .description {
-  font-size: 14px;
   color: #363534;
 }
 
-#btn-atb {
+.btn-atb {
   width: 115px;
   height: 29px;
   align-items: flex-end;
@@ -179,7 +180,7 @@ h1 span {
   right: 0;
 }
 
-#btn-atb:hover {
+.btn-atb:hover {
   color: #f8ae23;
 }
 
@@ -203,8 +204,7 @@ h1 span {
 }
 
 .content-basket h3,
-.content-basket p,
-.content-basket img {
+.content-basket p {
   margin-top: 50px;
   color: #235028;
 }
@@ -215,87 +215,95 @@ h1 span {
 
 .content-basket p {
   width: auto;
+  text-align: center;
+}
+
+#close-basket {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 34px;
+  text-align: center;
+  color: #235028;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
 .added-to-basket {
-  height: 340px;
+  height: 360px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 #basket-name {
   text-align: start;
   color: #363534;
   font-weight: 900;
-  margin: 0px 10px;
+  font-size: 20px;
 }
 
 .basket-description {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
-  font-size: 14px;
+  justify-content: space-between;
   color: #363534;
   height: 100px;
   width: 400px;
   background-color: #729e72;
   border-radius: 5px;
   margin-top: 10px;
+  padding: 10px 15px;
 }
 
 .basket-toolbar {
   display: flex;
   justify-content: space-between;
-  height: 20px;
-  margin: 0px 10px;
-}
-
-#delete-btn {
-  border: none;
-  cursor: pointer;
-  background-color: #729e72;
-}
-
-.delete-right {
-  margin-right: 20px;
-}
-
-#delete-btn-img {
-  margin-top: 0px;
-  height: 20px;
-  width: 20px;
-}
-
-#plus-btn {
-  border: none;
-  cursor: pointer;
-  background-color: #729e72;
-  width: 20px;
-  font-weight: 700;
+  align-items: center;
+  height: 32px;
   margin: 0;
 }
 
-#minus-btn {
+.plus-btn,
+.minus-btn,
+.delete-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px !important;
+  height: 32px !important;
+  color: #235028;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
-  background-color: #729e72;
-  width: 20px;
-  font-weight: 700;
+  font-size: 20px;
+  font-weight: 900 !important;
+  text-shadow:
+    0.5px 0 0 #235028,
+    -0.5px 0 0 #235028;
   margin: 0;
+  padding: 0;
+  background-color: #729e72;
+  transition: background-color 0.1s ease;
 }
 
-#plus {
-  width: 20px;
-  font-weight: 700;
-  margin: 0;
+.count {
+  font-size: 20px;
+  font-weight: bold;
+  color: #363534;
+  display: inline-block;
+  min-width: 20px;
+  text-align: center;
 }
 
 .basket-btns {
   display: flex;
-  gap: 5px;
+  align-items: center;
+  gap: 10px;
 }
 
 .basket-price {
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 800;
   margin: 0 10px;
 }
@@ -331,8 +339,26 @@ h1 span {
   border: none;
   cursor: pointer;
   background-color: #235028;
-  color: white;
+  color: #f3f0ea;
   font-size: 32px;
+}
+
+.big-basket-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.item-count {
+  background-color: #235028;
+  color: #f3f0ea;
+  height: 36px;
+  width: 39px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hidden {
